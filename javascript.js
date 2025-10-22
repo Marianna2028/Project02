@@ -1,45 +1,63 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector("#new-task");
-    const taskInput = document.querySelector("#task");
-    const tasksList = document.querySelector("#tasks_list");
 
-    form.onsubmit = function(event) {
-        event.preventDefault(); // prevent page refresh
-        const taskText = taskInput.value.trim();
-        if (!taskText) return; // don’t add empty tasks
+  const form = document.querySelector("#new-task");
+  const taskList = document.querySelector("#task-list");
 
-        // Create list item
-        const li = document.createElement('li');
+  form.onsubmit = function(event) {
+    event.preventDefault();
 
-        // Task text
-        const taskSpan = document.createElement('span');
-        taskSpan.textContent = taskText;
-        taskSpan.style.marginRight = "10px";
+    const taskText = document.querySelector('#task').value.trim();
+    const priority = document.querySelector('#priority').value;
 
-        // Priority dropdown
-        const prioritySelect = document.createElement('select');
-        prioritySelect.innerHTML = `
-            <option value="Low">Low</option>
-            <option value="Medium">Medium</option>
-            <option value="High">High</option>
-        `;
-        prioritySelect.style.marginRight = "10px";
+    if (taskText === "") return;
 
-        // Remove button
-        const removeButton = document.createElement('button');
-        removeButton.textContent = "Remove Task";
-        removeButton.addEventListener('click', () => li.remove());
+    // Create task list item
+    const li = document.createElement('li');
 
-        // Add elements to li
-        li.appendChild(taskSpan);
-        li.appendChild(prioritySelect);
-        li.appendChild(removeButton);
+    // Create task span
+    const span = document.createElement('span');
+    span.textContent = taskText;
+    li.appendChild(span);
 
-        // Add li to the list
-        tasksList.appendChild(li);
+    // Create radio buttons for Pending / Complete
+    const statusContainer = document.createElement('span');
+    const uniqueName = 'status_' + Date.now(); // unique name for radio buttons
 
-        // Clear input
-        taskInput.value = '';
-    };
+    const pendingLabel = document.createElement('label');
+    const pendingRadio = document.createElement('input');
+    pendingRadio.type = 'radio';
+    pendingRadio.name = uniqueName;
+    pendingRadio.value = 'pending';
+    pendingRadio.checked = true;
+    pendingLabel.appendChild(pendingRadio);
+    pendingLabel.appendChild(document.createTextNode('Pending'));
+
+    const completeLabel = document.createElement('label');
+    const completeRadio = document.createElement('input');
+    completeRadio.type = 'radio';
+    completeRadio.name = uniqueName;
+    completeRadio.value = 'complete';
+    completeLabel.appendChild(completeRadio);
+    completeLabel.appendChild(document.createTextNode('Complete'));
+
+    statusContainer.appendChild(pendingLabel);
+    statusContainer.appendChild(completeLabel);
+    li.appendChild(statusContainer);
+
+    // Remove button
+    const removeBtn = document.createElement('button');
+    removeBtn.textContent = 'Remove';
+    removeBtn.addEventListener('click', function() {
+      li.remove();
+    });
+    li.appendChild(removeBtn);
+
+    // Append to task list
+    taskList.appendChild(li);
+
+    // Reset form
+    form.reset();
+  };
 });
+
 
