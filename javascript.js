@@ -11,12 +11,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Create task list item
     const li = document.createElement('li');
-    li.className = 'task-item';
+    li.className = `task-item ${priority}`;
 
     // Task text
     const span = document.createElement('span');
     span.textContent = taskText;
     li.appendChild(span);
+
+    // Default visual state = pending
+    span.classList.add('pending');
 
     // Status radio buttons
     const statusContainer = document.createElement('span');
@@ -72,6 +75,4 @@ document.addEventListener('DOMContentLoaded', function() {
     form.reset();
   };
 });
-
-
 
