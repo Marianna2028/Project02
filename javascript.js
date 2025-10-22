@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     pendingRadio.value = 'pending';
     pendingRadio.checked = true;
     pendingLabel.appendChild(pendingRadio);
-    pendingLabel.appendChild(document.createTextNode('Pending'));
+    pendingLabel.appendChild(document.createTextNode(' Pending  '));
 
     const completeLabel = document.createElement('label');
     const completeRadio = document.createElement('input');
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
     completeRadio.name = uniqueName;
     completeRadio.value = 'complete';
     completeLabel.appendChild(completeRadio);
-    completeLabel.appendChild(document.createTextNode('Complete'));
+    completeLabel.appendChild(document.createTextNode(' Complete '));
 
     statusContainer.appendChild(pendingLabel);
     statusContainer.appendChild(completeLabel);
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
       radio.addEventListener('change', function() {
         if (completeRadio.checked) {
           span.classList.add('completed');
-          span.classList.remove('pending');
+          span.classList.('pending');
         } else {
           span.classList.remove('completed');
           span.classList.add('pending');
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Remove button
     const removeBtn = document.createElement('button');
-    removeBtn.textContent = 'Remove';
+    removeBtn.textContent = ' Remove ';
     removeBtn.addEventListener('click', function() {
       li.remove();
     });
