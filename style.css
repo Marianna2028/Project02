@@ -1,11 +1,9 @@
 /* Pending status */
-.pending {
+.task-item span.pending {
   color: orange;
 }
 
-/* Completed status */
-.completed {
+.task-item span.completed {
   color: green;
   text-decoration: line-through;
 }
-
