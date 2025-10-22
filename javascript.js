@@ -45,14 +45,18 @@ document.addEventListener('DOMContentLoaded', function() {
     li.appendChild(statusContainer);
 
     // Update task style when status changes
-    [pendingRadio, completeRadio].forEach(radio => {
-      radio.addEventListener('change', function() {
-        if (completeRadio.checked) {
-          span.classList.add('completed');
-          span.classList.('pending');
-        } else {
-          span.classList.remove('completed');
-          span.classList.add('pending');
+ [pendingRadio, completeRadio].forEach(radio => {
+  radio.addEventListener('change', function() {
+    if (completeRadio.checked) {
+      span.classList.add('completed');
+      span.classList.remove('pending');
+    } else {
+      span.classList.remove('completed');
+      span.classList.add('pending');
+    }
+  });
+});
+
         }
       });
     });
