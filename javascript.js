@@ -11,17 +11,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Create task list item
     const li = document.createElement('li');
-    li.className = 'task-item';
 
-    // Task text
+    // -----------------------------
+    // Task text with priority label
+    // -----------------------------
     const span = document.createElement('span');
-    span.textContent = taskText;
-    li.appendChild(span);
+    // Correct syntax: backticks for template literal, and slice(1) not slice()1
+    span.textContent = `[${priority.charAt(0).toUpperCase() + priority.slice(1)}] ${taskText}`;
+    li.appendChild(span); // Note: appendChild, not append.Child
 
-    // Default status color
+    // Default status
     span.classList.add('pending');
 
+    // -----------------------------
     // Status radio buttons
+    // -----------------------------
     const statusContainer = document.createElement('span');
     statusContainer.className = 'status-container';
     const uniqueName = 'status_' + Date.now();
@@ -75,4 +79,5 @@ document.addEventListener('DOMContentLoaded', function() {
     form.reset();
   };
 });
+
 
