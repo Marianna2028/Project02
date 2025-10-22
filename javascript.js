@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     pendingRadio.value = 'pending';
     pendingRadio.checked = true;
     pendingLabel.appendChild(pendingRadio);
-    pendingLabel.appendChild(document.createTextNode(' Pending  '));
+    pendingLabel.appendChild(document.createTextNode(' Pending '));
 
     const completeLabel = document.createElement('label');
     const completeRadio = document.createElement('input');
@@ -45,18 +45,14 @@ document.addEventListener('DOMContentLoaded', function() {
     li.appendChild(statusContainer);
 
     // Update task style when status changes
- [pendingRadio, completeRadio].forEach(radio => {
-  radio.addEventListener('change', function() {
-    if (completeRadio.checked) {
-      span.classList.add('completed');
-      span.classList.remove('pending');
-    } else {
-      span.classList.remove('completed');
-      span.classList.add('pending');
-    }
-  });
-});
-
+    [pendingRadio, completeRadio].forEach(radio => {
+      radio.addEventListener('change', function() {
+        if (completeRadio.checked) {
+          span.classList.add('completed');
+          span.classList.remove('pending');
+        } else {
+          span.classList.remove('completed');
+          span.classList.add('pending');
         }
       });
     });
@@ -76,5 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
     form.reset();
   };
 });
+
 
 
