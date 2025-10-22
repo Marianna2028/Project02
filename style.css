@@ -1,1 +1,11 @@
+/* Pending status */
+.pending {
+  color: yellow;
+}
+
+/* Completed status */
+.completed {
+  color: green;
+  text-decoration: line-through;
+}
 
