@@ -1,10 +1,10 @@
 .pending {
-  color: black;           /* black for pending */
+  color: orange;           /* black for pending */
   text-decoration: none;  /* no strike-through */
 }
 
 .completed {
-  color: gray;            /* gray for completed */
+  color: green;            /* gray for completed */
   text-decoration: line-through;
 }
 
