@@ -1,35 +1,31 @@
-<body>
+<h1 class="text-decoration-underline text-center">To-Do List</h1>
+<h3 class="text-center">Use this easy program to keep track of all your tasks!</h3>
 
-  <h1 class="text-decoration-underline">To-Do List</h1>
-  <h3>Use this easy program to keep track of all your tasks!</h3>
+<!-- Task input form -->
+<form id="new-task" class="mb-3 text-center">
+  <input id="task" type="text" placeholder="Enter task">
+  <select id="priority" class="form-select d-inline-block w-auto">
+    <option value="low">Low</option>
+    <option value="medium">Medium</option>
+    <option value="high">High</option>
+  </select>
+  <button type="submit" class="btn btn-primary">Add Task</button>
+</form>
 
-  <!-- Task input form -->
-  <form id="new-task">
-    <input id="task" type="text" placeholder="Enter task">
-    <select id="priority" class="form-select">
-      <option value="low">Low</option>
-      <option value="medium">Medium</option>
-      <option value="high">High</option>
-    </select>
-    <button type="submit" class="btn btn-primary">Add Task</button>
-  </form>
+<!-- Task list -->
+<ul id="task-list" class="list-unstyled text-center"></ul>
 
-  <!-- Task list -->
-  <ul id="task-list"></ul>
+<!-- Send message form at the bottom -->
+<form class="mb-3 text-center">
+  <div class="input-group mb-3 w-50 mx-auto">
+    <input type="email" class="form-control" placeholder="Your Email" required>
+  </div>
+  <div class="form-group mb-3 w-50 mx-auto">
+    <label for="comment">Any questions or program issues? Send me a note!</label>
+    <textarea class="form-control" rows="5" id="comment" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Send</button>
+</form>
 
-  <!-- Send a message form at the BOTTOM -->
-  <form>
-    <div class="input-group mb-3">
-      <input type="email" class="form-control" placeholder="Your Email" required>
-    </div>
-    <div class="form-group mb-3">
-      <label for="comment">Any questions or program issues? Send me a note!</label>
-      <textarea class="form-control" rows="5" id="comment" required></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Send</button>
-  </form>
-
-  <!-- JS -->
-  <script src="javascript.js"></script>
-</body>
+<script src="javascript.js"></script>
 
