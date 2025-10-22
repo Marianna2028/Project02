@@ -1,3 +1,7 @@
+body {
+  text-align: center;
+}
+
 .pending {
   color: orange;           /* black for pending */
   text-decoration: none;  /* no strike-through */
