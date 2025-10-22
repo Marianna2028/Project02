@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-
   const form = document.querySelector("#new-task");
   const taskList = document.querySelector("#task-list");
 
@@ -8,20 +7,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const taskText = document.querySelector('#task').value.trim();
     const priority = document.querySelector('#priority').value;
-
     if (taskText === "") return;
 
     // Create task list item
     const li = document.createElement('li');
+    li.className = 'task-item';
 
-    // Create task span
+    // Task text
     const span = document.createElement('span');
     span.textContent = taskText;
     li.appendChild(span);
 
-    // Create radio buttons for Pending / Complete
+    // Status radio buttons
     const statusContainer = document.createElement('span');
-    const uniqueName = 'status_' + Date.now(); // unique name for radio buttons
+    statusContainer.className = 'status-container';
+    const uniqueName = 'status_' + Date.now();
 
     const pendingLabel = document.createElement('label');
     const pendingRadio = document.createElement('input');
@@ -44,6 +44,19 @@ document.addEventListener('DOMContentLoaded', function() {
     statusContainer.appendChild(completeLabel);
     li.appendChild(statusContainer);
 
+    // Update task style when status changes
+    [pendingRadio, completeRadio].forEach(radio => {
+      radio.addEventListener('change', function() {
+        if (completeRadio.checked) {
+          span.classList.add('completed');
+          span.classList.remove('pending');
+        } else {
+          span.classList.remove('completed');
+          span.classList.add('pending');
+        }
+      });
+    });
+
     // Remove button
     const removeBtn = document.createElement('button');
     removeBtn.textContent = 'Remove';
@@ -59,5 +72,4 @@ document.addEventListener('DOMContentLoaded', function() {
     form.reset();
   };
 });
-
 
