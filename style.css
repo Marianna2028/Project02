@@ -9,23 +9,6 @@
   text-decoration: line-through;
 }
 
-/* Priority colors */
-
-/*low*/
-.low {
-  color: lightblue;
-}
-
-/*medium*/
-.medium {
-  color: purple;
-}
-
-/*high*/
-.high {
-  color: red;
-}
-
 /* Optional: Buttons styling */
 button {
   margin-left: 5px;
