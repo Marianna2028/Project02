@@ -63,6 +63,7 @@ li.appendChild(span);
         if (completeRadio.checked) {
           span.classList.add('completed');
           span.classList.remove('pending');
+          alert("Congratulations on completing your task!🎉🎉🎉");
         } else {
           span.classList.remove('completed');
           span.classList.add('pending');
@@ -75,6 +76,7 @@ li.appendChild(span);
     removeBtn.textContent = ' Remove ';
     removeBtn.addEventListener('click', function() {
       li.remove();
+      alert("Your task has been removed.");
     });
     li.appendChild(removeBtn);
 
