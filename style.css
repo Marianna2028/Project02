@@ -45,6 +45,7 @@ button {
 
 /* formatting task list */
 #task-list {
+ display: flex; /*formatts box based on size of task*/
   padding-left: 0;   /* removes default left-aligning text */
   margin-top: 20px;  /* space about element */
   display: flex;  /*automatically aligning and spacing elements in the list  */
@@ -64,7 +65,6 @@ button {
   border: 1px solid #ccc; /* add border to make element stand out*/
   border-radius: 5px; /* space between border and element */
   background-color: white; /* background color is white */
-   width: 100%;   /* allows box to take up for space (for hover effect) */
   box-sizing: border-box; /* sizes are uniform  */
 }
 
