@@ -1,64 +1,70 @@
+ /*formatting body of website */
 body {
   text-align: center;
   background-color: lightgray;
   font-family: garamond, serif;
-  margin: 0;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
+  margin: 0;  /* removes default margins */
+  padding: 20px;  /* space between content and border */
+  display: flex;  /* automatticaly align and space elements */
+  flex-direction: column;  /* arranges list in a stack */
   align-items: center;
-  min-height: 100vh;
+  min-height: 100vh;  /* ensures that elements will fit the user screen */
 }
 
+ /* setting color for pending */
 .pending {
-  color: orange;           /* black for pending */
-  text-decoration: none;  /* no strike-through */
+  color: orange;          
+  text-decoration: none;  
 }
 
+ /* setting color completed */
 .completed {
-  color: green;            /* gray for completed */
+  color: green;            
   text-decoration: line-through;
 }
 
-/* Optional: Buttons styling */
+ /* button styling */
 button {
   margin-left: 5px;
 }
 
+ /* color for low priority */
 .priority.low {
   color: darkblue;
 }
 
-
+ /* color for medium priority */
 .priority.medium {
   color: purple;
 }
 
+ /* color for high priority */
 .priority.high {
   color: red;
 }
 
-
+/* formatting task list */
 #task-list {
-  padding-left: 0;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
+  padding-left: 0;   /* removes default left-aligning text */
+  margin-top: 20px;  /* space about element */
+  display: flex;  /*automatically aligning and spacing elements in the list  */
+  flex-direction: column;  /* aligning the lists in a column */
   align-items: center; /* center the list like before */
-  width: 100%;
+  width: 100%;  /* automatically formatted to fits the users screen */
 }
 
+
 #task-list li {
-  display: flex;           /* row layout */
+  display: flex;           /* all the elements of the indivual task is in a row */
   align-items: center;     /* vertical center */
   gap: 10px;               /* space between text, buttons, radios */
-  margin-bottom: 10px;
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #fff;
+  margin-bottom: 10px;  /* space between the list items */
+  padding: 5px 10px;   /* space between text, buttons, radios */
+  border: 1px solid #ccc; /* add border to make element stand out*/
+  border-radius: 5px; /* space between border and element */
+  background-color: #fff; /* background color is white */
   max-width: 500px;        /* limit width so it stays neat */
-  box-sizing: border-box;
+  box-sizing: border-box; /* sizes are uniform  */
   justify-content: center;  /* center the contents inside li */
 }
 
