@@ -49,10 +49,13 @@ button {
 
 #task-list li {
   display: flex;
-  justify-content: center;
-  list-style-type: none;
-  gap: 10px;
-  list-style-type: none;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+  margin: 5px 0;
+  padding: 5px;
+  background: white;
+  border-radius: 8px;
 }
 
   
