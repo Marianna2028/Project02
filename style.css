@@ -1,6 +1,7 @@
 body {
   text-align: center;
   background-color: lightgray;
+  font-family: garamond, serif;
   margin: 0;
   padding: 20px;
   display: flex;
