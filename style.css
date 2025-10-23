@@ -44,10 +44,29 @@ button {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* center the list like before */
+  width: 100%;
 }
 
- 
+#task-list li {
+  display: flex;           /* row layout */
+  align-items: center;     /* vertical center */
+  gap: 10px;               /* space between text, buttons, radios */
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  max-width: 500px;        /* limit width so it stays neat */
+  box-sizing: border-box;
+  justify-content: center;  /* center the contents inside li */
+}
+
+
+
+ #message {
+  transition: opacity 0.5s ease; /* smooth fade effect */
+}
 
 
 
