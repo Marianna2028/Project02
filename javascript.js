@@ -1,33 +1,18 @@
-//javascript array 
-// let model = {12, 12, "CUS1172", 14, 18, 0. { name: "myname")
-// let model = [];
-// process.exit(0);
-
-//let task_name = 
-// let priority = 
-// task_status = 
-
-// process.exit(0);
-
-/* 
-let task = {
-"task-id" 
-}
-
-*/
-
-
-
-
-
 // adding new task to list
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.querySelector("#new-task");
   const taskList = document.querySelector("#task-list");
+  
+      //array 
+   
+    tasks = [];
+    
 
   //submittion of task
   form.onsubmit = function(event) {
     event.preventDefault();
+
+
 
     //task priority 
     const taskText = document.querySelector('#task').value.trim();
@@ -35,6 +20,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //cannot submit an empty task
     if (taskText === "") return;
+
+    //creating values 
+
+    
+    let task = {
+"task-id" : id,
+"task-name" : task_name,
+"task-priority" : priority,
+"status" : task_status,
+}
+
 
     // Create task list item
     const li = document.createElement('li');
@@ -88,7 +84,11 @@ li.appendChild(span);
     //adds entire status to list item 
     statusContainer.appendChild(pendingLabel);
     statusContainer.appendChild(completeLabel);
+    statusContainer.id = tasks.length + 1
     li.appendChild(statusContainer);
+
+    
+      ${index + 1}. ${item.title} (${item.priority}, ${item.status})
 
     // Update task style when status changes
     [pendingRadio, completeRadio].forEach(radio => {
@@ -98,6 +98,12 @@ li.appendChild(span);
           span.classList.add('completed');
           span.classList.remove('pending'); //task will no longer be pending (orange) but marked as competed (green with a line through it) 
           alert("Congratulations on completing your task!🎉🎉🎉"); //alert when user marks task as completed
+
+          //updates task in array
+          task.status = "completed";
+
+          
+          
         } else { //until user marks task as completed it will remain pending
           span.classList.remove('completed');
           span.classList.add('pending');
@@ -111,6 +117,11 @@ li.appendChild(span);
     removeBtn.addEventListener('click', function() {
       li.remove(); //task will  only be removed when user selects that option
       alert("Your task has been removed."); //alert when user removes a task
+
+      // updates task in array
+      task.status = "removed";
+      
+      
     });
     li.appendChild(removeBtn); //button to preform action 
 
