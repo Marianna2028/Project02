@@ -36,5 +36,12 @@ button {
   color: red;
 }
 
+#task-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  list-style-position: inside;
+}
+
 
 
