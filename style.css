@@ -51,6 +51,7 @@ button {
   flex-direction: column;  /* aligning the lists in a column */
   align-items: center; /* center the list like before */
   width: 100%;  /* automatically formatted to fits the users screen */
+ max-width: 500px; /*prevents box from extending too far*/
 }
 
 
@@ -63,7 +64,6 @@ button {
   border: 1px solid #ccc; /* add border to make element stand out*/
   border-radius: 5px; /* space between border and element */
   background-color: white; /* background color is white */
-  max-width: 500px;        /* limit width so it stays neat */
    width: 100%;   /* allows box to take up for space (for hover effect) */
   box-sizing: border-box; /* sizes are uniform  */
 }
