@@ -62,12 +62,16 @@ button {
   padding: 5px 10px;   /* space between text, buttons, radios */
   border: 1px solid #ccc; /* add border to make element stand out*/
   border-radius: 5px; /* space between border and element */
-  background-color: #fff; /* background color is white */
+  background-color: white; /* background color is white */
   max-width: 500px;        /* limit width so it stays neat */
   box-sizing: border-box; /* sizes are uniform  */
   justify-content: center;  /* center the contents inside li */
 }
 
+#task-list li:hover {
+  background-color: #f0f0f0; /* darkens the background slighly when user hovers over it */
+  transform: scale(1.02); /* slightly elarges text when user hovers over it*/
+}
 
 
  #message {
