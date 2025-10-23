@@ -17,8 +17,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // -----------------------------
     const span = document.createElement('span');
     // Correct syntax: backticks for template literal, and slice(1) not slice()1
-    span.textContent = `[${priority.charAt(0).toUpperCase() + priority.slice(1)}] ${taskText}`;
-    li.appendChild(span); // Note: appendChild, not append.Child
+   
+span.innerHTML = `
+  <span class="priority ${priority}">
+    [${priority.charAt(0).toUpperCase() + priority.slice(1)}]
+  </span> ${taskText}
+`;
+li.appendChild(span);
+
 
     // Default status
     span.classList.add('pending');
