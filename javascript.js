@@ -4,15 +4,12 @@ document.addEventListener('DOMContentLoaded', function() {
   const taskList = document.querySelector("#task-list");
   
       //array 
-   
     tasks = [];
     
 
   //submittion of task
   form.onsubmit = function(event) {
     event.preventDefault();
-
-
 
     //task priority 
     const taskText = document.querySelector('#task').value.trim();
@@ -22,14 +19,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (taskText === "") return;
 
     //creating values 
-
-    
     let task = {
-"task-id" : id,
-"task-name" : task_name,
-"task-priority" : priority,
-"status" : task_status,
-}
+     "task-id" : id,
+     "task-name" : task_name,
+     "task-priority" : priority,
+    "status" : task_status,
+          }
 
 
     // Create task list item
