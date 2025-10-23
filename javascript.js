@@ -1,3 +1,25 @@
+//javascript array 
+// let model = {12, 12, "CUS1172", 14, 18, 0. { name: "myname")
+// let model = [];
+// process.exit(0);
+
+//let task_name = 
+// let priority = 
+// task_status = 
+
+// process.exit(0);
+
+/* 
+let task = {
+"task-id" 
+}
+
+*/
+
+
+
+
+
 // adding new task to list
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.querySelector("#new-task");
