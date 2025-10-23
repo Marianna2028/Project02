@@ -21,3 +21,19 @@ body {
 button {
   margin-left: 5px;
 }
+
+.priority.low {
+  color:lightblue;
+}
+
+
+.priority.medium {
+  color: purple;
+}
+
+.priority.high {
+  color: red;
+}
+
+
+
