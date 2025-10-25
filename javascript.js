@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const taskList = document.querySelector("#task-list");
   
       //array 
-    tasks = [];
+   let  tasks = [];
     
 
   //submittion of task
@@ -111,9 +111,12 @@ li.appendChild(span);
       alert("Your task has been removed."); //alert when user removes a task
       // updates task in array
       task.status = "removed";
+
+      //removes task from array 
       
-      
+  tasks = tasks.filter(t => t.id !== task.id);
     });
+      
     li.appendChild(removeBtn); //button to preform action 
 
     // Append to task list -> visable to the user 
