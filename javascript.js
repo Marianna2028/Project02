@@ -19,13 +19,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if (taskText === "") return;
 
     //creating values 
-    let task = {
-     "task-id" : id,
-     "task-name" : task_name,
-     "task-priority" : priority,
-    "status" : task_status,
-          }
-
+  let task = {
+  id: tasks.length + 1,
+  name: taskText,
+  priority: priority,
+  status: "pending"
+};
+    //adds task stored in array
+    tasks.push(task); 
 
     // Create task list item
     const li = document.createElement('li');
@@ -41,7 +42,7 @@ span.innerHTML = `
   </span> ${taskText}
 `;
 li.appendChild(span);
-
+ 
 
     // Default status
     span.classList.add('pending');
@@ -82,9 +83,6 @@ li.appendChild(span);
     statusContainer.id = tasks.length + 1
     li.appendChild(statusContainer);
 
-    
-      ${index + 1}. ${item.title} (${item.priority}, ${item.status})
-
     // Update task style when status changes
     [pendingRadio, completeRadio].forEach(radio => {
       radio.addEventListener('change', function() {
@@ -93,7 +91,6 @@ li.appendChild(span);
           span.classList.add('completed');
           span.classList.remove('pending'); //task will no longer be pending (orange) but marked as competed (green with a line through it) 
           alert("Congratulations on completing your task!🎉🎉🎉"); //alert when user marks task as completed
-
           //updates task in array
           task.status = "completed";
 
@@ -112,7 +109,6 @@ li.appendChild(span);
     removeBtn.addEventListener('click', function() {
       li.remove(); //task will  only be removed when user selects that option
       alert("Your task has been removed."); //alert when user removes a task
-
       // updates task in array
       task.status = "removed";
       
